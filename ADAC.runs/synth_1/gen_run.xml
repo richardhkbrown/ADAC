@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698463432" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/TopFile.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1698466530" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/TopFile.dcp">
   <File Type="PA-TCL" Name="TopFile.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="TopFile_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TopFile_reports.tcl"/>
@@ -48,14 +48,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/TopFile.v">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/ModUartRx.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

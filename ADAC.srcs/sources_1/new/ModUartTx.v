@@ -73,7 +73,7 @@ module ModUartTx
     assign WREN_EN = WREN & !RST;
     
     // State machines
-    reg [($clog2(10+1)):0] state = 0; // 10 is max state
+    reg [($clog2(11+1)):0] state = 0; // 10 is max state
     always @ ( posedge(clk) ) begin
     
         // Counter
@@ -83,29 +83,33 @@ module ModUartTx
             counter <= 0;
         end
         
+        // FIFO read
+        if ( state==0 && !EMPTY && fifoResetCount==0 ) begin
+            RsTx <= 0;
+            RDEN <= 1;
+            state <= 1;
+        end else if ( state==1 ) begin
+            RDEN <= 0;
+            state <= 2;
+        end
+
         // Parallel to serial
         if ( counter==RESET_COUNT ) begin
             case ( state )
-            
-                0:
-                    if ( !EMPTY && (fifoResetCount==0) ) begin
-                        RsTx <= 0;
-                        state <= 1;
-                    end
 
-                1,2,3,4,5,6,7,8:
+                2,3,4,5,6,7,8,9:
                     begin
-                        RsTx <= DO[state-1];
+                        RsTx <= DO[state-2];
                         state <= state + 1;
                     end
                     
-                9:
+                10:
                     begin
                         RsTx <= 1;
-                        state <= 10;
+                        state <= 11;
                     end
                     
-                10:
+                11:
                     begin
                         state <= 0;
                     end
@@ -117,15 +121,6 @@ module ModUartTx
             endcase
         end
         
-        // FIFO read
-        if ( state==1 ) begin
-            if (!EMPTY) begin
-                RDEN <= 1;
-            end
-        end else begin
-            RDEN <= 0;
-        end
-
     end
     
    // FIFO_SYNC_MACRO: Synchronous First-In, First-Out (FIFO) RAM Buffer

@@ -144,7 +144,7 @@ module TopFile(
     ModHex7Seg instHex( .clk(clk), .digits(doOutLatch),
         .decimals(4'b0), .seg(seg), .dp(dp), .an(an) );
     ModDa2 #( .SIO_RATE(10000000) ) instDa2( .clk(clk), .do(JA), .dataA(dataA), .dataB(dataB), .req(req), .ack(ack) );
-       
+    
     assign led = sw[2]==0 ? doOut :
                  {dataB[11:4],dataA[11:4]};
 

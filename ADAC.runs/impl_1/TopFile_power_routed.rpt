@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date             : Fri Oct 27 21:26:29 2023
+| Date             : Fri Oct 27 22:17:49 2023
 | Host             : DESKTOP-B5G40IL running 64-bit major release  (build 9200)
 | Command          : report_power -file TopFile_power_routed.rpt -pb TopFile_power_summary_routed.pb -rpx TopFile_power_routed.rpx
 | Design           : TopFile
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        4 |       --- |             --- |
-| Slice Logic    |    <0.001 |      364 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      158 |     20800 |            0.76 |
+| Slice Logic    |    <0.001 |      361 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      155 |     20800 |            0.75 |
 |   CARRY4       |    <0.001 |       22 |      8150 |            0.27 |
-|   Register     |    <0.001 |      142 |     41600 |            0.34 |
+|   Register     |    <0.001 |      141 |     41600 |            0.34 |
 |   F7/F8 Muxes  |    <0.001 |        1 |     32600 |           <0.01 |
 |   Others       |     0.000 |       12 |       --- |             --- |
-| Signals        |    <0.001 |      332 |       --- |             --- |
+| Signals        |    <0.001 |      330 |       --- |             --- |
 | Block RAM      |    <0.001 |      0.5 |        50 |            1.00 |
 | I/O            |     0.016 |       45 |       106 |           42.45 |
 | XADC           |     0.002 |        1 |       --- |             --- |
